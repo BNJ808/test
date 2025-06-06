@@ -14,7 +14,7 @@ export const baseInitialData: WorkoutData = {
           name: 'Pecs',
           order: 0,
           exercises: [
-            { id: generateUUID(), name: 'Développé Couché', sets: [4], order: 0 },
+            { id: generateUUID(), name: 'Développé Couché', sets: [1kg × 2], order: 0 },
             { id: generateUUID(), name: 'Développé Couché incliné', series: 3, reps: '12', weight: 10, sets: [], order: 1 },
             { id: generateUUID(), name: 'Ecartés Couchés', series: 3, reps: '15', weight: 6, sets: [], order: 2 }
           ]
