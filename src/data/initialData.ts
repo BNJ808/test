@@ -1,40 +1,12 @@
 import { WorkoutData } from '../types';
 import { generateUUID } from '../utils/calculations';
 
-// Définition d'un type pour les exercices afin d'inclure les nouvelles propriétés
-type Exercise = {
-  id: string;
-  name: string;
-  series: number;
-  reps: string;
-  weight: number;
-  sets: any[]; // Gardé pour une utilisation future (ex: suivi des séries effectuées)
-  order: number;
-};
-
-// Définition d'un type pour les catégories
-type Category = {
-  id: string;
-  name: string;
-  order: number;
-  exercises: Exercise[];
-};
-
-// Définition d'un type pour les jours d'entraînement
-type Day = {
-  id: string;
-  name: string;
-  order: number;
-  categories: Category[];
-};
-
-// Structure de données principale pour l'entraînement
 export const baseInitialData: WorkoutData = {
   days: [
     // JOUR 1: PUSH LÉGER (Ex: Lundi)
     {
       id: generateUUID(),
-      name: 'Push (Léger)',
+      name: 'Lundi + Jeudi',
       order: 0,
       categories: [
         {
@@ -42,7 +14,7 @@ export const baseInitialData: WorkoutData = {
           name: 'Pecs',
           order: 0,
           exercises: [
-            { id: generateUUID(), name: 'Développé Couché', series: 4, reps: '12', weight: 10, sets: [], order: 0 },
+            { id: generateUUID(), name: 'Développé Couché', sets: [4], order: 0 },
             { id: generateUUID(), name: 'Développé Couché incliné', series: 3, reps: '12', weight: 10, sets: [], order: 1 },
             { id: generateUUID(), name: 'Ecartés Couchés', series: 3, reps: '15', weight: 6, sets: [], order: 2 }
           ]
